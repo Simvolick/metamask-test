@@ -28,7 +28,8 @@
     "superjson": "1.9.1",
     "wagmi": "^0.9.1",
     "web3": "^1.8.1",
-    "zod": "^3.18.0"
+    "zod": "^3.18.0",
+    "use-debounce": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
