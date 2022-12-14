@@ -7,12 +7,12 @@ import axios from "axios";
 
 import { trpc } from "../utils/trpc";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
 
-  async function getName () {
-    const responce = await axios.get('/api/hello')
-    console.log(responce)
-  }
+  // async function getName () {
+  //   const responce = await axios.get('/api/hello')
+  //   console.log(responce)
+  // }
 
 
   return (
@@ -33,7 +33,9 @@ const Home: NextPage = () => {
               href="/"
               target="_blank"
             >
-              <button onClick={getName}>Get Name</button>
+              <Link href="/signIn">
+              <button>Sign In using MetaMask</button>
+              </Link>
             </Link>
           </div>
           <div className="flex flex-col items-center gap-2">

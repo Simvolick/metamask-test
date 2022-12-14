@@ -10,18 +10,8 @@ import { trpc } from "../utils/trpc";
 
 import "../styles/globals.css";
 
-// const MyApp: AppType<{ session: Session | null }> = ({
-//   Component,
-//   pageProps: { session, ...pageProps },
-// }) => {
-//   return (
-//     <SessionProvider session={session}>
-//       <Component {...pageProps} />
-//     </SessionProvider>
-//   );
-// };
+// import { SendTransaction } from "./sendTransaction";
 
-// export default trpc.withTRPC(MyApp);
 
 const defaultChains = [mainnet, goerli]
 
@@ -35,13 +25,14 @@ const client = createClient({
 });
 
 const MyApp: AppType<{ session: Session | null }> = ({ 
-  Component, 
-  pageProps: {session, ...pageProps} 
-}) => {
+              Component, 
+              pageProps: {session, ...pageProps} 
+            }) => {
   return (
     <WagmiConfig client={client}>
       <SessionProvider session={session} refetchInterval={0}>
         <Component {...pageProps} />
+        {/* <SendTransaction /> */}
       </SessionProvider>
     </WagmiConfig>
   );
